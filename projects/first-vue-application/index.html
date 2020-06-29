@@ -41,6 +41,15 @@
 		<br>
 		<input type="text" v-model="color">
 		<input type="text" v-model="width">
+		<hr>
+		<p v-if="show">You can see me! <span>Hello!</span></p>
+		<template v-if="show">
+			<h1>Heading</h1>
+			<p>Inside a template</p>
+		</template>
+		<p v-else>Now you see me!</p>
+		<p v-show="show">Do you also see me?</p>
+		<button @click="show = !show">Switch</button>
 	</div>
 	<script>
 		new Vue({
@@ -56,7 +65,8 @@
 				secondCounter: 0,
 				attachRed: false,
 				color: 'green',
-				width: 100
+				width: 100,
+				show: true
 			},
 			computed: {
 				output: function () {
@@ -69,7 +79,7 @@
 						blue: !this.attachRed
 					};
 				},
-				myStyle: function() {
+				myStyle: function () {
 					return {
 						backgroundColor: this.color,
 						width: this.width + 'px'
