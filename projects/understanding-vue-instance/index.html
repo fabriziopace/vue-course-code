@@ -16,6 +16,11 @@
     <div id="app2">
         <h1>{{ title }}</h1>
         <button @click="onChange">Change something in Vue 1</button>
+        <hello></hello>
+        <hello></hello>
+    </div>
+    <div id="app3">
+
     </div>
     <script>
         var data = {
@@ -23,8 +28,11 @@
             showParagraph: false
         }
 
+        Vue.component('hello', {
+            template: '<h1>Hello</h1>'
+        });
+
         var vm1 = new Vue({
-            el: '#app1',
             data: data,
             methods: {
                 show: function () {
@@ -48,6 +56,8 @@
             }
         });
 
+        vm1.$mount('#app1');
+
         console.log(vm1.$data === data);
 
         vm1.$refs.heading.innerText = 'Something else';
@@ -70,6 +80,14 @@
                 }
             }
         });
+
+        // var vm3 = new Vue({
+        //     el: 'hello',
+        //     template: '<h1>Hello</h1>'
+        // });
+
+        // vm3.$mount();
+        // document.getElementById('app3').appendChild(vm3.$el);
     </script>
 </body>
 
