@@ -22,6 +22,11 @@
     <div id="app3">
 
     </div>
+    <div id="app4">
+        <h1>{{ title }}</h1>
+        <button @click="title = 'Changed'">Update Title</button>
+        <button @click="destroy">Destroy</button>
+    </div>
     <script>
         var data = {
             title: 'The VueJS Instance',
@@ -88,6 +93,43 @@
 
         // vm3.$mount();
         // document.getElementById('app3').appendChild(vm3.$el);
+
+
+        var vm4 = new Vue({
+            el: '#app4',
+            data: {
+                title: 'The VueJS Instance'
+            },
+            beforeCreate: function () {
+                console.log('beforeCreate()');
+            },
+            created: function () {
+                console.log('created()');
+            },
+            beforeMount: function () {
+                console.log('beforeMount()');
+            },
+            mounted: function () {
+                console.log('mounted()');
+            },
+            beforeUpdate: function () {
+                console.log('beforeUpdate()');
+            },
+            updated: function () {
+                console.log('updated()');
+            },
+            beforeDestroy: function () {
+                console.log('beforeDestroy()');
+            },
+            destroyed: function () {
+                console.log('destroyed()');
+            },
+            methods: {
+                destroy: function() {
+                    this.$destroy();
+                }
+            }
+        })
     </script>
 </body>
 
