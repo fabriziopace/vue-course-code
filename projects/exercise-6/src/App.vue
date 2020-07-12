@@ -1,10 +1,10 @@
 <template>
   <div class="container">
-    <header />
+    <Header />
     <hr />
-    <tableStatus />
+    <TableStatus />
     <hr />
-    <footer />
+    <Footer />
   </div>
 </template>
 
@@ -15,9 +15,9 @@
 
     export default {
       components: {
-        'header': Header,
-        'tableStatus': TableStatus,
-        'footer': Footer
+        Header,
+        TableStatus,
+        Footer
       }
     }
 </script>
