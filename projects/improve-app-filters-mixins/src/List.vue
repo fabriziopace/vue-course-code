@@ -1,0 +1,30 @@
+<template>
+  <div>
+    <h1>Filters & Mixins</h1>
+    <input v-model="filterText" />
+    <ul>
+      <li v-for="fruit in filteredFruits">{{ fruit }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      fruits: ["Apple", "Banana", "Mango", "Melon"],
+      filterText: "",
+    };
+  },
+  computed: {
+    filteredFruits() {
+      return this.fruits.filter((el) => {
+        return el.match(this.filterText);
+      });
+    },
+  },
+};
+</script>
+
+<style>
+</style>
