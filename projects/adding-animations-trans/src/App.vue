@@ -8,9 +8,12 @@
         <br />
         <br />
         <transition name="fade">
-          <div class="alert alert-info" v-if="show">This is some Info</div>
+          <div class="alert alert-info" v-show="show">This is some Info</div>
         </transition>
         <transition name="slide" type="animation">
+          <div class="alert alert-info" v-if="show">This is some Info</div>
+        </transition>
+        <transition enter-active-class="animate__animated animate__bounce" leave-active-class="animate__animated animate__shakeX">
           <div class="alert alert-info" v-if="show">This is some Info</div>
         </transition>
       </div>
@@ -22,7 +25,7 @@
 export default {
   data() {
     return {
-      show: false,
+      show: true,
     };
   },
 };
@@ -48,7 +51,7 @@ export default {
 }
 .slide-enter-active {
   animation: slide-in 1s ease-out forwards;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
 }
 .slide-leave {
 }
