@@ -18,9 +18,15 @@ Code of Vue JS 2 - The Complete Guide Course
 8. Vue Practice Exercise 6
 9. Vue Practice Exercise 7
 10. Vue Practice Exercise 8
-11. First Vue Application
-12. Handling User Input with Forms
-13. An Introduction to Components
-14. The Monster Slayer Game
-15. Understanding the VueJS Instance
-16. Communicating between Components
+11. Vue Practice Exercise 9
+12. Vue Practice Exercise 10
+13. Vue Practice Exercise 11
+14. First Vue Application
+15. Handling User Input with Forms
+16. An Introduction to Components
+17. The Monster Slayer Game
+18. Understanding the VueJS Instance
+19. Communicating between Components
+20. Improving your App with Filters and Mixins
+21. Adding Animations and Transitions
+22. Wonderful Quotes application
