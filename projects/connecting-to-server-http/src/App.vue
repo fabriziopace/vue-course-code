@@ -12,6 +12,11 @@
           <input class="form-control" type="text" v-model="user.email" />
         </div>
         <button class="btn btn-primary" @click="submit">Submit</button>
+        <hr />
+        <button class="btn btn-primary" @click="fetchData">Get Data</button>
+        <ul class="list-group">
+          <li class="list-group-item" v-for="u in users">{{ u.username }} = {{ u.email }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -25,6 +30,7 @@ export default {
         username: "",
         email: "",
       },
+      users: [],
     };
   },
   methods: {
@@ -42,6 +48,20 @@ export default {
             console.log(error);
           }
         );
+    },
+    fetchData() {
+      this.$http
+        .get("https://connecting-server-vue.firebaseio.com/data.json")
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          const resultArray = [];
+          for (let key in data) {
+            resultArray.push(data[key]);
+          }
+          this.users = resultArray;
+        });
     },
   },
 };
