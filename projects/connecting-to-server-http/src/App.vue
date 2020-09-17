@@ -35,23 +35,18 @@ export default {
   },
   methods: {
     submit() {
-      this.$http
-        .post(
-          "https://connecting-server-vue.firebaseio.com/data.json",
-          this.user
-        )
-        .then(
-          (response) => {
-            console.log(response);
-          },
-          (error) => {
-            console.log(error);
-          }
-        );
+      this.$http.post("", this.user).then(
+        (response) => {
+          console.log(response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
     },
     fetchData() {
       this.$http
-        .get("https://connecting-server-vue.firebaseio.com/data.json")
+        .get("")
         .then((response) => {
           return response.json();
         })
