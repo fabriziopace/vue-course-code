@@ -31,3 +31,4 @@ Code of Vue JS 2 - The Complete Guide Course
 21. Adding Animations and Transitions
 22. Wonderful Quotes application
 23. Connecting to Servers via Http with vue-resource
+24. Routing in a VueJS Application
