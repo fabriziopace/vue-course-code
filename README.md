@@ -33,4 +33,4 @@ Code of Vue JS 2 - The Complete Guide Course
 23. Connecting to Servers via Http with vue-resource
 24. Routing in a VueJS Application
 25. Better State Management with Vuex
-26. Final Project - The Stock Trader
+26. Final Project - The Stock Trader App
