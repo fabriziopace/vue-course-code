@@ -16,7 +16,7 @@ export default {
   },
   created() {
     axios
-      .get("url/users.json")
+      .get("/users.json")
       .then((res) => {
         console.log(res);
         const data = res.data;

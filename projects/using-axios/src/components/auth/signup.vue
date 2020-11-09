@@ -101,7 +101,7 @@ export default {
       };
       console.log(formData);
 
-      axios.post('url/users.json', formData)
+      axios.post('/users.json', formData)
       .then(res => console.log(res))
       .catch(error => console.log(error));
     },
