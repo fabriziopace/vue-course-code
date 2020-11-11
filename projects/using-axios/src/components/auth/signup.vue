@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "../../axios-auth";
 export default {
   data() {
     return {
@@ -101,9 +101,10 @@ export default {
       };
       console.log(formData);
 
-      axios.post('/users.json', formData)
-      .then(res => console.log(res))
-      .catch(error => console.log(error));
+      axios
+        .post("/users.json", formData)
+        .then((res) => console.log(res))
+        .catch((error) => console.log(error));
     },
   },
 };
