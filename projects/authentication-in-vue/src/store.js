@@ -11,27 +11,42 @@ export default new Vuex.Store({
     userId: null
   },
   mutations: {
-
+    authUser(state, userData) {
+      state.idToken = userData.token;
+      state.userId = userData.userId;
+    }
   },
   actions: {
-    signup ({commit}, authData) {
+    signup({ commit }, authData) {
       axios
-      .post("/signupNewUser?key=[API_KEY]", {
-        email: authData.email,
-        password: authData.password,
-        returnSecureToken: true,
-      })
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+        .post("/signupNewUser?key=[API_KEY]", {
+          email: authData.email,
+          password: authData.password,
+          returnSecureToken: true,
+        })
+        .then((res) => {
+          console.log(res);
+          commit('authUser', {
+            token: res.data.idToken,
+            userId: res.data.localId
+          })
+        })
+        .catch((error) => console.log(error));
     },
-    login ({commit}, authData) {
+    login({ commit }, authData) {
       axios
         .post("/verifyPassword?key=[API_KEY]", {
           email: authData.email,
           password: authData.password,
           returnSecureToken: true,
         })
-        .then((res) => console.log(res))
+        .then((res) => {
+          console.log(res);
+          commit('authUser', {
+            token: res.data.idToken,
+            userId: res.data.localId
+          })
+        })
         .catch((error) => console.log(error));
 
     }
