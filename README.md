@@ -35,3 +35,4 @@ Code of Vue JS 2 - The Complete Guide Course
 25. Better State Management with Vuex
 26. Final Project - The Stock Trader App
 27. Using Axios instead of vue-resource
+28. Rendering Conditional Content & Lists
