@@ -36,3 +36,4 @@ Code of Vue JS 2 - The Complete Guide Course
 26. Final Project - The Stock Trader App
 27. Using Axios instead of vue-resource
 28. Rendering Conditional Content & Lists
+29. DOM Interaction with Vue
