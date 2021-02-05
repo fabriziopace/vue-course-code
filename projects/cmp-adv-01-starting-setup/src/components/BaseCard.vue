@@ -1,11 +1,16 @@
 <template>
   <div>
-      <slot></slot>
+    <header>
+      <slot name="header"></slot>
+    </header>
+    <slot></slot>
   </div>
 </template>
 
 <script>
+// import header from "../../../authentication-in-vue/src/components/header/header.vue";
 export default {
+  // components: { header },
 };
 </script>
 
