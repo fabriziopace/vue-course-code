@@ -8,7 +8,8 @@
         >
       </div>
       <p v-if="isLoading">Loading...</p>
-      <ul v-else>
+      <p v-else-if="!isLoading && (!results || results.length === 0)">No stored experiences found. Start adding some survey results first.</p>
+      <ul v-else-if="!isLoading && results && results.length > 0">
         <survey-result
           v-for="result in results"
           :key="result.id"
@@ -30,15 +31,13 @@ export default {
   data() {
     return {
       results: [],
-      isLoading: false
+      isLoading: false,
     };
   },
   methods: {
     loadExperiences() {
       this.isLoading = true;
-      fetch(
-        'firebaseURL/surveys.json'
-      )
+      fetch('firebaseURL/surveys.json')
         .then((res) => {
           if (res.ok) {
             return res.json();
@@ -56,7 +55,7 @@ export default {
   },
   mounted() {
     this.loadExperiences();
-  }
+  },
 };
 </script>
 
